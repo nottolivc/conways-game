@@ -14,6 +14,47 @@ Each cell with two or three neighbors survives.
 For a space that is 'empty' or 'unpopulated'
 Each cell with three neighbors becomes populated.
 
+## The basis for the Algortithm for the game of life:
+
+`in javascript`
+
+```
+// There are eight possible neighbors for a "cell". The above mentioned rules apply as so:
+[
+ [-1,-1],
+ [-1,0],
+ [-1,1],
+ [0,-1],
+ [0,0],
+ [0,1],
+ [1,-1],
+ [1,0],
+ [1,1]
+]
+//  Once we have written the possibilities in to an array, we can use a double for loop to iterate through possibilities or directions a cell can move on a grid of a give size, for example x = 25 by y = 25:
+// Start loops
+//
+for(let i = 0; i < rows; i++){
+// Next
+      for(let j = 0; j < cols; j++){
+        let neighbors = 0;
+            directions.forEach(([x,y])=> {
+            const nextI = i + x;
+            const nextJ = j + y;
+        if(nextI >= 0 && nextI<rows && nextJ >= 0 && nextJ < cols){
+            neighbors += grid[nextI][nextJ]
+          }
+        });
+        if (neighbors < 2 || neighbors > 3){
+          temporaryGrid[i][j] =  0;
+        } else if (grid[i][j] === 0 && neighbours === 3) {
+          temporaryGrid[i][j] = 1;
+        }
+      };
+    }
+// note that we are using a temporary grid here, and a new one can be created to run the process again.
+```
+
 ## Available Scripts
 
 In the project directory, you can run:
