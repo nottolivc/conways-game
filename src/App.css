@@ -35,6 +35,8 @@ div.rules {
 }
 
 header {
+  display: flex;
+  flex-flow: column wrap;
   text-align: center;
   margin: 0 auto;
   background: whitesmoke;

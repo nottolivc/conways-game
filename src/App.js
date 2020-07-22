@@ -199,6 +199,7 @@ const App = () => {
                     height: 12.5,
                     backgroundColor: grid[i][j] ? "#00ddff" : null,
                     border: "solid 1px #444",
+                    borderRadius: "4px",
                   }}
                 />
               ))
