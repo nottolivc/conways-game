@@ -16,6 +16,10 @@ body {
 }
 
 .App {
+  display: flex;
+  flex-flow: column wrap;
+  text-align: center;
+  justify-content: center;
   text-align: center;
   margin: 0 auto;
   background: #222;
@@ -23,12 +27,11 @@ body {
   opacity: 0.9;
 }
 
-p {
-  display: flex;
-  width: 50%;
+div.rules {
   text-align: center;
   justify-content: center;
-  align-items: center;
+  line-height: 1.4;
+  margin: 20px 80px 20px 80px;
 }
 
 header {
@@ -37,12 +40,35 @@ header {
   background: whitesmoke;
 }
 
+.grid {
+  margin: 0 auto;
+}
+
+.grid:hover {
+  cursor: pointer;
+}
+
+div.cell {
+}
+
 section {
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
   background: #222;
   color: whitesmoke;
+}
+
+.buttons {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  background: #222;
+  color: whitesmoke;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 .counter {
