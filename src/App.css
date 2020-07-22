@@ -166,14 +166,14 @@ footer a {
     font-size: 1.5rem;
     text-align: center;
   }
-  .App {
+  /* .App {
     margin: 0 10px 0 10px;
     text-align: center;
     flex-flow: column wrap;
     text-align: center;
     justify-content: center;
     width: 50%;
-  }
+  } */
 
   h2 {
     display: flex;
@@ -183,7 +183,7 @@ footer a {
     text-align: center;
   }
 
-  h4 {
+  /* h4 {
     font-size: 0.75rem;
     text-align: center;
     margin: 0 10px;
@@ -199,5 +199,5 @@ footer a {
     justify-content: center;
     align-items: center;
     width: 70%;
-  }
+  } */
 }
