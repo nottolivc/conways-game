@@ -132,6 +132,17 @@ const App = () => {
                 height="400px"
               />
               <br />
+              <h4>
+                Enter shape you click on to create responds with cell automaton
+                results:
+              </h4>
+              <img
+                src="https://i1.wp.com/blog.faq400.com/wp-content/uploads/2020/04/1024px-Game_of_life_glider_gun.svg-1.png?fit=1024%2C299&ssl=1&resize=1280%2C720"
+                width="140px"
+                height="80px"
+                alt=""
+                className="demo"
+              />
               <h4>Speed:</h4>
               <input
                 type="range"
