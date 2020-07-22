@@ -82,11 +82,14 @@ const App = () => {
       {/* <ThreeJSX /> */}
       <div className="App">
         <header>
-          <h1>Welcome to Conways Game of Life, Begin</h1>
-          <h2>
-            Press Random + Run to see Results, or select starting cell pattern:
-          </h2>
-          <h4>Grid Count: {count}</h4>
+          <section>
+            <h1>Welcome to Conways Game of Life, Begin</h1>
+            <h2>
+              Press Random + Run to see Results, or select starting cell
+              pattern:
+            </h2>
+            <h4>Grid Count: {count}</h4>
+          </section>
           <button
             className="run"
             onClick={() => {
