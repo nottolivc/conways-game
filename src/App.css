@@ -44,6 +44,11 @@ header {
 
 .grid {
   margin: 0 auto;
+  background-image: linear-gradient(
+    to right,
+    rgba(45, 0, 0, 0),
+    rgba(0, 0, 200, 1)
+  );
 }
 
 .grid:hover {

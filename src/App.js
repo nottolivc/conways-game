@@ -36,7 +36,19 @@ const App = () => {
   const [grid, setGrid] = useState(() => {
     return createGrid();
   });
+  //init color scheme
+  // function generateHslaColors(saturation, lightness, alpha, amount) {
+  //   let colors = [];
+  //   let huedelta = Math.trunc(360 / amount);
 
+  //   for (let i = 0; i < amount; i++) {
+  //     let hue = i * huedelta;
+  //     colors.push(`hsla(${hue},${saturation}%,${lightness}%,${alpha})`);
+  //   }
+
+  //   return colors;
+  // }
+  // let colore = generateHslaColors(50, 100, 1.0, 3);
   // init to not running hook
   const [running, setRunning] = useState(false);
 
@@ -108,12 +120,13 @@ const App = () => {
             </div>
             <div>
               <h4>
-                Enter any of the shapes below with your mouse to see the
-                results:
+                Enter any of the shapes you see below with your mouse, run to
+                see the results:
               </h4>
               <img
                 // src="https://evolvingweb.ca/sites/default/files/inline-images/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f3456565a547654717a5252304255774e49482f67697068792e676966.gif"
-                src="https://img.itch.zone/aW1nLzIxNTk1NTYucG5n/original/nS1Wxk.png"
+                //src="https://img.itch.zone/aW1nLzIxNTk1NTYucG5n/original/nS1Wxk.png"
+                src="https://ix.cs.uoregon.edu/~norris/cis330/projects/gameoflife.png"
                 alt=""
                 width="520px"
                 height="400px"
@@ -198,7 +211,7 @@ const App = () => {
                     width: 12.5,
                     height: 12.5,
                     backgroundColor: grid[i][j] ? "#00ddff" : null,
-                    border: "solid 1px #444",
+                    border: "solid 1px #333",
                     borderRadius: "4px",
                   }}
                 />
