@@ -1,7 +1,7 @@
 import React, { useState, useCallback, useRef } from "react";
 import produce from "immer";
 import "./App.css";
-import ThreeJSX from "./ThreeJSX";
+// import ThreeJSX from "./ThreeJSX";
 //import {Link} from "react-router-dom"
 
 // now that number of rows and columns are created, run app
@@ -11,7 +11,7 @@ let numCols = 75;
 
 const App = () => {
   // setting counter logic
-  let [count, setCount] = useState(75);
+  // let [count, setCount] = useState(75);
   // setting conways rules for possible values for traversal in 9x9 grid of cells
   const traverseNeighbors = [
     [0, 1],
@@ -56,10 +56,10 @@ const App = () => {
   const runningRef = useRef(running);
   runningRef.current = running;
   // set state logic to control range of speed input for timeout delay
-  let [range, setRange] = useState(75);
-  const handleChange = (event) => {
-    setRange({ range: event.target.value });
-  };
+  // let [range, setRange] = useState(75);
+  // const handleChange = (event) => {
+  //   setRange({ range: event.target.value });
+  // };
   // if not currently running, use callback to simulate update with setTimeout time value
   const runSimulation = useCallback(() => {
     if (!runningRef.current) {
@@ -92,7 +92,7 @@ const App = () => {
     });
 
     setTimeout(runSimulation, 80);
-  }, []);
+  }, [traverseNeighbors]);
 
   return (
     <>
@@ -108,7 +108,7 @@ const App = () => {
               Press Random + Run to see Results, or select starting cell
               pattern:
             </h2>
-            <h4>Grid Count: {count}</h4>
+            <h4>Grid Count: {75}</h4>
             <div className="rules">
               <h4>
                 The Rules: For a space that is 'populated': Each cell with one
@@ -137,7 +137,7 @@ const App = () => {
                 type="range"
                 min="0"
                 max="100"
-                onChange={handleChange}
+                // onChange={handleChange}
               ></input>
             </div>
           </section>
@@ -221,7 +221,9 @@ const App = () => {
         </div>
         <footer>
           <br />
-          <a href="#">Home</a>
+          <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">
+            Home
+          </a>
           <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">
             About
           </a>
