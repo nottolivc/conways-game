@@ -3,9 +3,10 @@ body {
   margin: 0 auto;
   display: flex;
   justify-content: center;
-  background: white;
-  /* background-image: url("https://images.pexels.com/photos/733475/pexels-photo-733475.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"); */
-  /* Full height */
+  /* background: white;
+  background-image: url("https://images.pexels.com/photos/733475/pexels-photo-733475.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  Full height */
+  background: #111;
   height: 100%;
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
@@ -19,6 +20,15 @@ body {
   margin: 0 auto;
   background: #222;
   color: whitesmoke;
+  opacity: 0.9;
+}
+
+p {
+  display: flex;
+  width: 50%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
 header {

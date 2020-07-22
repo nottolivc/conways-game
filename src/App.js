@@ -1,9 +1,10 @@
 import React, { useState, useCallback, useRef } from "react";
 import produce from "immer";
 import "./App.css";
+import ThreeJSX from "./ThreeJSX";
+//import {Link} from "react-router-dom"
 
 // now that number of rows and columns are created, run app
-
 // make sure they're mutable
 let numRows = 50;
 let numCols = 75;
@@ -78,115 +79,135 @@ const App = () => {
       });
     });
 
-    setTimeout(runSimulation, { range });
+    setTimeout(runSimulation, 95);
   }, []);
 
   return (
     <>
-      <header>
-        <br />
-        <h1>Welcome to Conways Game of Life, Begin!</h1>
-        <br />
-      </header>
-      <div className="App">
-        <section>
-          <h2>
-            Press Random + Run to see Results, or select starting cell pattern:
-          </h2>
-          <h4>Grid Count: {count}</h4>
-        </section>
-        <div>
-          <h4>
-            Enter any of the shapes below with your mouse to see the results:
-          </h4>
-          <img
-            // src="https://evolvingweb.ca/sites/default/files/inline-images/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f3456565a547654717a5252304255774e49482f67697068792e676966.gif"
-            src="https://img.itch.zone/aW1nLzIxNTk1NTYucG5n/original/nS1Wxk.png"
-            alt=""
-            width="520px"
-            height="400px"
-          />
+      <div>
+        <header>
           <br />
-          <p>Speed:</p>
-          <input type="range" min="0" max="100" onChange={handleChange}></input>
-        </div>
-        <button
-          className="run"
-          onClick={() => {
-            setRunning(!running);
-            if (!running) {
-              runningRef.current = true;
-              runSimulation();
-            }
-          }}
-        >
-          {running ? "stop" : "run"}
-        </button>
-        <button
-          className="pause"
-          onClick={() => {
-            setRunning(!running);
-          }}
-        >
-          {running ? "pause" : "pause"}
-        </button>
-        <button
-          className="start"
-          onClick={() => {
-            const rows = [];
-            for (let i = 0; i < numRows; i++) {
-              rows.push(
-                Array.from(Array(numCols), () => (Math.random() > 0.69 ? 1 : 0))
-              );
-            }
+          <h1>Welcome to Conways Game of Life, Begin!</h1>
+          <br />
+        </header>
+        <div className="App">
+          <section>
+            <h2>
+              Press Random + Run to see Results, or select starting cell
+              pattern:
+            </h2>
+            {/* <p>
+            The Rules: For a space that is 'populated': Each cell with one or no
+            neighbors dies, as if by solitude. Each cell with four or more
+            neighbors dies, as if by overpopulation. Each cell with two or three
+            neighbors survives. For a space that is 'empty' or 'unpopulated'
+            Each cell with three neighbors becomes populated.
+          </p> */}
+            <h4>Grid Count: {count}</h4>
+          </section>
+          <div>
+            <h4>
+              Enter any of the shapes below with your mouse to see the results:
+            </h4>
+            <img
+              // src="https://evolvingweb.ca/sites/default/files/inline-images/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f3456565a547654717a5252304255774e49482f67697068792e676966.gif"
+              src="https://img.itch.zone/aW1nLzIxNTk1NTYucG5n/original/nS1Wxk.png"
+              alt=""
+              width="520px"
+              height="400px"
+            />
+            <br />
+            <p>Speed:</p>
+            <input
+              type="range"
+              min="0"
+              max="100"
+              onChange={handleChange}
+            ></input>
+          </div>
+          <button
+            className="run"
+            onClick={() => {
+              setRunning(!running);
+              if (!running) {
+                runningRef.current = true;
+                runSimulation();
+              }
+            }}
+          >
+            {running ? "stop" : "run"}
+          </button>
+          <button
+            className="pause"
+            onClick={() => {
+              setRunning(!running);
+            }}
+          >
+            {running ? "pause" : "pause"}
+          </button>
+          <button
+            className="start"
+            onClick={() => {
+              const rows = [];
+              for (let i = 0; i < numRows; i++) {
+                rows.push(
+                  Array.from(Array(numCols), () =>
+                    Math.random() > 0.69 ? 1 : 0
+                  )
+                );
+              }
 
-            setGrid(rows);
-          }}
-        >
-          random
-        </button>
-        <button
-          className="clear"
-          onClick={() => {
-            setGrid(createGrid());
-          }}
-        >
-          clear
-        </button>
-        {/* set div size with style and then run logic to map out cells */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: `repeat(${numCols},12.5px)`,
-          }}
-        >
-          {grid.map((rows, i) =>
-            rows.map((col, j) => (
-              <div
-                key={`${i}-${j}`}
-                onClick={() => {
-                  const newGrid = produce(grid, (gridCopy) => {
-                    gridCopy[i][j] = grid[i][j] ? 0 : 1;
-                  });
-                  setGrid(newGrid);
-                }}
-                style={{
-                  width: 12.5,
-                  height: 12.5,
-                  backgroundColor: grid[i][j] ? "#00ddff" : null,
-                  border: "solid 1px #444",
-                }}
-              />
-            ))
-          )}
+              setGrid(rows);
+            }}
+          >
+            random
+          </button>
+          <button
+            className="clear"
+            onClick={() => {
+              setGrid(createGrid());
+            }}
+          >
+            clear
+          </button>
+          {/* set div size with style and then run logic to map out cells */}
+          <div
+            className="grid"
+            style={{
+              display: "grid",
+              gridTemplateColumns: `repeat(${numCols},12.5px)`,
+            }}
+          >
+            {grid.map((rows, i) =>
+              rows.map((col, j) => (
+                <div
+                  key={`${i}-${j}`}
+                  onClick={() => {
+                    const newGrid = produce(grid, (gridCopy) => {
+                      gridCopy[i][j] = grid[i][j] ? 0 : 1;
+                    });
+                    setGrid(newGrid);
+                  }}
+                  style={{
+                    width: 12.5,
+                    height: 12.5,
+                    backgroundColor: grid[i][j] ? "#00ddff" : null,
+                    border: "solid 1px #444",
+                  }}
+                />
+              ))
+            )}
+          </div>
         </div>
+        <footer>
+          <br />
+          <a href="#">Home</a>
+          <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">
+            About
+          </a>
+        </footer>
       </div>
-      <footer>
-        <a href="#">Home</a>
-        <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">
-          About
-        </a>
-      </footer>
+      {/* <ThreeJSX /> */}
     </>
   );
 };
