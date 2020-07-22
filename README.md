@@ -32,7 +32,7 @@ Each cell with three neighbors becomes populated.
  [1,1]
 ]
 // Once we have written the possibilities in to an array, we can use a double for loop to
-// iterate through possibilities or directions a cell can move on a grid of a give size, for example 24x25 // cells.
+// iterate through possibilities or directions a cell can move on a grid of a given size, 25x25 cells.
 
 // Start loops
 
@@ -54,12 +54,13 @@ for(let i = 0; i < rows; i++){
         }
       };
     }
-// note that we are using a temporary grid here, and a new one can be created to run the process again.
+// Note that we are using a temporary grid here, and a new one
+// can be created to run the process again.
 ```
 
 ## Available Scripts
 
-In the project directory, you can run:
+In the project client directory, you can run:
 
 ### `yarn start`
 
