@@ -42,7 +42,11 @@ const App = () => {
   // refer useref to whether running or not to toggle state
   const runningRef = useRef(running);
   runningRef.current = running;
-
+  // set state logic to control range of speed input for timeout delay
+  let [range, setRange] = useState(75);
+  const handleChange = (event) => {
+    setRange({ range: event.target.value });
+  };
   // if not currently running, use callback to simulate update with setTimeout time value
   const runSimulation = useCallback(() => {
     if (!runningRef.current) {
@@ -74,7 +78,7 @@ const App = () => {
       });
     });
 
-    setTimeout(runSimulation, 80);
+    setTimeout(runSimulation, { range });
   }, []);
 
   return (
@@ -101,6 +105,14 @@ const App = () => {
               width="520px"
               height="400px"
             />
+            <br />
+            <p>Speed:</p>
+            <input
+              type="range"
+              min="0"
+              max="100"
+              onChange={handleChange}
+            ></input>
           </div>
           <button
             className="run"
