@@ -91,7 +91,7 @@ const App = () => {
       });
     });
 
-    setTimeout(runSimulation, 80);
+    setTimeout(runSimulation, 160);
   }, [traverseNeighbors]);
 
   return (
@@ -240,7 +240,6 @@ const App = () => {
           </a>
         </footer>
       </div>
-      {/* <ThreeJSX /> */}
     </>
   );
 };
