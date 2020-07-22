@@ -83,83 +83,76 @@ const App = () => {
 
   return (
     <>
-      {/* <ThreeJSX /> */}
+      <header>
+        <br />
+        <h1>Welcome to Conways Game of Life, Begin!</h1>
+        <br />
+      </header>
       <div className="App">
-        <header>
-          <h1>Welcome to Conways Game of Life, Begin!</h1>
-          <section>
-            <h2>
-              Press Random + Run to see Results, or select starting cell
-              pattern:
-            </h2>
-            <h4>Grid Count: {count}</h4>
-          </section>
-          <div>
-            <h4>
-              Enter any of the shapes below with your mouse to see the results:
-            </h4>
-            <img
-              // src="https://evolvingweb.ca/sites/default/files/inline-images/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f3456565a547654717a5252304255774e49482f67697068792e676966.gif"
-              src="https://img.itch.zone/aW1nLzIxNTk1NTYucG5n/original/nS1Wxk.png"
-              alt=""
-              width="520px"
-              height="400px"
-            />
-            <br />
-            <p>Speed:</p>
-            <input
-              type="range"
-              min="0"
-              max="100"
-              onChange={handleChange}
-            ></input>
-          </div>
-          <button
-            className="run"
-            onClick={() => {
-              setRunning(!running);
-              if (!running) {
-                runningRef.current = true;
-                runSimulation();
-              }
-            }}
-          >
-            {running ? "stop" : "run"}
-          </button>
-          <button
-            className="pause"
-            onClick={() => {
-              setRunning(!running);
-            }}
-          >
-            {running ? "pause" : "pause"}
-          </button>
-          <button
-            className="start"
-            onClick={() => {
-              const rows = [];
-              for (let i = 0; i < numRows; i++) {
-                rows.push(
-                  Array.from(Array(numCols), () =>
-                    Math.random() > 0.69 ? 1 : 0
-                  )
-                );
-              }
+        <section>
+          <h2>
+            Press Random + Run to see Results, or select starting cell pattern:
+          </h2>
+          <h4>Grid Count: {count}</h4>
+        </section>
+        <div>
+          <h4>
+            Enter any of the shapes below with your mouse to see the results:
+          </h4>
+          <img
+            // src="https://evolvingweb.ca/sites/default/files/inline-images/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f3456565a547654717a5252304255774e49482f67697068792e676966.gif"
+            src="https://img.itch.zone/aW1nLzIxNTk1NTYucG5n/original/nS1Wxk.png"
+            alt=""
+            width="520px"
+            height="400px"
+          />
+          <br />
+          <p>Speed:</p>
+          <input type="range" min="0" max="100" onChange={handleChange}></input>
+        </div>
+        <button
+          className="run"
+          onClick={() => {
+            setRunning(!running);
+            if (!running) {
+              runningRef.current = true;
+              runSimulation();
+            }
+          }}
+        >
+          {running ? "stop" : "run"}
+        </button>
+        <button
+          className="pause"
+          onClick={() => {
+            setRunning(!running);
+          }}
+        >
+          {running ? "pause" : "pause"}
+        </button>
+        <button
+          className="start"
+          onClick={() => {
+            const rows = [];
+            for (let i = 0; i < numRows; i++) {
+              rows.push(
+                Array.from(Array(numCols), () => (Math.random() > 0.69 ? 1 : 0))
+              );
+            }
 
-              setGrid(rows);
-            }}
-          >
-            random
-          </button>
-          <button
-            className="clear"
-            onClick={() => {
-              setGrid(createGrid());
-            }}
-          >
-            clear
-          </button>
-        </header>
+            setGrid(rows);
+          }}
+        >
+          random
+        </button>
+        <button
+          className="clear"
+          onClick={() => {
+            setGrid(createGrid());
+          }}
+        >
+          clear
+        </button>
         {/* set div size with style and then run logic to map out cells */}
         <div
           style={{

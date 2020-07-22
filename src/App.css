@@ -4,12 +4,21 @@ body {
   display: flex;
   justify-content: center;
   background: white;
+  background-image: url("https://images.pexels.com/photos/733475/pexels-photo-733475.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  /* Full height */
+  height: 100%;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .App {
   text-align: center;
   margin: 0 auto;
   background: #222;
+  color: whitesmoke;
 }
 
 header {
@@ -18,10 +27,12 @@ header {
   background: whitesmoke;
 }
 
-header section {
+section {
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
+  background: #222;
+  color: whitesmoke;
 }
 
 .counter {
