@@ -82,14 +82,26 @@ const App = () => {
       {/* <ThreeJSX /> */}
       <div className="App">
         <header>
+          <h1>Welcome to Conways Game of Life, Begin!</h1>
           <section>
-            <h1>Welcome to Conways Game of Life, Begin</h1>
             <h2>
               Press Random + Run to see Results, or select starting cell
               pattern:
             </h2>
             <h4>Grid Count: {count}</h4>
           </section>
+          <div>
+            <h4>
+              Enter any of the shapes below with your mouse to see the results:
+            </h4>
+            <img
+              // src="https://evolvingweb.ca/sites/default/files/inline-images/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f3456565a547654717a5252304255774e49482f67697068792e676966.gif"
+              src="https://img.itch.zone/aW1nLzIxNTk1NTYucG5n/original/nS1Wxk.png"
+              alt=""
+              width="400px"
+              height="400px"
+            />
+          </div>
           <button
             className="run"
             onClick={() => {
@@ -135,15 +147,6 @@ const App = () => {
           >
             clear
           </button>
-          <div>
-            <h4>
-              Enter any of the shapes below with your mouse to see the results:
-            </h4>
-            <img
-              src="https://evolvingweb.ca/sites/default/files/inline-images/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f3456565a547654717a5252304255774e49482f67697068792e676966.gif"
-              alt=""
-            />
-          </div>
         </header>
         {/* set div size with style and then run logic to map out cells */}
         <div
