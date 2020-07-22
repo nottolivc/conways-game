@@ -135,6 +135,15 @@ const App = () => {
           >
             clear
           </button>
+          <div>
+            <h4>
+              Enter any of the shapes below with your mouse to see the results:
+            </h4>
+            <img
+              src="https://evolvingweb.ca/sites/default/files/inline-images/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f3456565a547654717a5252304255774e49482f67697068792e676966.gif"
+              alt=""
+            />
+          </div>
         </header>
         {/* set div size with style and then run logic to map out cells */}
         <div

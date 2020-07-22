@@ -13,7 +13,6 @@ body {
 }
 
 header {
-  justify-content: center;
   text-align: center;
   margin: 0 auto;
   background: whitesmoke;
@@ -22,6 +21,7 @@ header {
 header section {
   display: flex;
   flex-flow: column wrap;
+  justify-content: center;
 }
 
 .counter {
