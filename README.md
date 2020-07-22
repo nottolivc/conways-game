@@ -1,4 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Current deployment on netlify: (https://zealous-murdock-8481c3.netlify.app/)
+--
 
 ## Cellular Automata and Conway's "Game of Life"
 
