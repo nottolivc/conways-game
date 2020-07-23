@@ -127,12 +127,12 @@ const App = () => {
 
   return (
     <>
-      <div>
-        <header>
-          <br />
-          <h1>Welcome to Conways Game of Life, Begin!</h1>
-          <br />
-        </header>
+      <header>
+        <br />
+        <h1>Welcome to Conways Game of Life, Begin!</h1>
+        <br />
+      </header>
+      <div className="container">
         <div className="App">
           <section>
             <h2>
@@ -142,11 +142,18 @@ const App = () => {
             {/* <h4>Grid Count: {75}</h4> */}
             <div className="rules">
               <h4>
-                The Rules: For a space that is 'populated': Each cell with one
-                or no neighbors dies, as if by solitude. Each cell with four or
-                more neighbors dies, as if by overpopulation. Each cell with two
-                or three neighbors survives. For a space that is 'empty' or
-                'unpopulated' Each cell with three neighbors becomes populated.
+                The Rules:
+                <br />
+                For a space that is 'populated': Each cell with one or no
+                neighbors dies, solitude.
+                <br />
+                Each cell with four or more neighbors dies, as if by
+                overpopulation.
+                <br />
+                Each cell with two or three neighbors survives. For a space that
+                is 'empty.'
+                <br />
+                Each cell with three neighbors becomes populated.
               </h4>
             </div>
             <div>
