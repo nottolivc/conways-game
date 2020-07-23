@@ -1,12 +1,67 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Current deployment on netlify: (https://zealous-murdock-8481c3.netlify.app/)
 
 ## Cellular Automata and Conway's "Game of Life"
 
 Welcome to John Conway's "Game of Life"! This is a computer science classic from 1970, a program that simulates a cellular automaton (plural automata). It has connections to all kinds of different aspects of computer science and nature.
 
+## Rules
+
+The Rules:
+For a space that is 'populated':
+Each cell with one or no neighbors dies, as if by solitude.
+Each cell with four or more neighbors dies, as if by overpopulation.
+Each cell with two or three neighbors survives.
+For a space that is 'empty' or 'unpopulated'
+Each cell with three neighbors becomes populated.
+
+## The basis for the Algortithm for the game of life:
+
+`in javascript`
+
+```
+// There are eight possible neighbors for a "cell". The above mentioned rules apply as so:
+[
+ [-1,-1],
+ [-1,0],
+ [-1,1],
+ [0,-1],
+ [0,0],
+ [0,1],
+ [1,-1],
+ [1,0],
+ [1,1]
+]
+// Once we have written the possibilities in to an array, we can use a double for loop to
+// iterate through possibilities or directions a cell can move on a grid of a given size, 25x25 cells.
+
+// Start loops
+
+for(let i = 0; i < rows; i++){
+// Nested loop to traverse both axis of the cells
+      for(let j = 0; j < cols; j++){
+        let neighbors = 0;
+            directions.forEach(([x,y])=> {
+            const nextI = i + x;
+            const nextJ = j + y;
+        if(nextI >= 0 && nextI<rows && nextJ >= 0 && nextJ < cols){
+            neighbors += grid[nextI][nextJ]
+          }
+        });
+        if (neighbors < 2 || neighbors > 3){
+          temporaryGrid[i][j] =  0;
+        } else if (grid[i][j] === 0 && neighbors === 3) {
+          temporaryGrid[i][j] = 1;
+        }
+      };
+    }
+// Note that we are using a temporary grid here, and a new one
+// can be created to run the process again.
+```
+
 ## Available Scripts
 
-In the project directory, you can run:
+In the project client directory, you can run:
 
 ### `yarn start`
 
