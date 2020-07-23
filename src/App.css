@@ -163,12 +163,12 @@ footer a {
   color: #444;
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   header {
     display: flex;
     flex-flow: column wrap;
   }
-  /* 
+  
   h1 {
     font-size: 1.1rem;
     text-align: center;
@@ -182,5 +182,5 @@ footer a {
   h4 {
     font-size: 0.7rem;
     text-align: center;
-  } */
-}
+  }
+} */
