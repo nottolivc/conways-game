@@ -162,11 +162,9 @@ const App = () => {
                 see the results:
               </h4>
               <img
-                // src="https://evolvingweb.ca/sites/default/files/inline-images/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f3456565a547654717a5252304255774e49482f67697068792e676966.gif"
-                //src="https://img.itch.zone/aW1nLzIxNTk1NTYucG5n/original/nS1Wxk.png"
                 src="https://ix.cs.uoregon.edu/~norris/cis330/projects/gameoflife.png"
                 alt=""
-                width="520px"
+                width="480px"
                 height="400px"
               />
               <br />
