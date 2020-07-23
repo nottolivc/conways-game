@@ -1,20 +1,28 @@
 body {
   text-align: center;
   margin: 0 auto;
-  display: flex;
+  position: relative;
+  width: 100%;
+  /* display: flex; */
   justify-content: center;
   /* background: white; */
-  background-image: url("https://www.vanseodesign.com/blog/wp-content/uploads/2011/10/background-3.jpg");
+  /* background-image: url("https://www.vanseodesign.com/blog/wp-content/uploads/2011/10/background-3.jpg"); */
   background: #111;
   height: 100%;
   /* Create the parallax scrolling effect */
-  background-attachment: fixed;
+  /* background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
 }
 
-.App {
+.container {
+  text-align: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* .App {
   display: flex;
   flex-flow: column wrap;
   text-align: center;
@@ -25,13 +33,14 @@ body {
   color: whitesmoke;
   opacity: 0.85;
   width: 80%;
-}
+} */
 
 div.rules {
   text-align: center;
   justify-content: center;
   line-height: 1.4;
   margin: 20px 80px 20px 80px;
+  overflow: none;
 }
 
 header {
@@ -42,8 +51,13 @@ header {
   background: whitesmoke;
 }
 
-.grid {
-  margin: 0 auto;
+div.grid {
+  position: relative;
+  align-items: center;
+  width: 70%;
+  justify-content: center;
+  text-align: center;
+  padding: 15%;
   background-image: linear-gradient(
     to right,
     rgba(45, 0, 0, 0),
@@ -67,6 +81,7 @@ div.cell {
   border-radius: 4px;
   opacity: 0.31;
 }
+
 section {
   display: flex;
   flex-flow: column wrap;
@@ -161,12 +176,17 @@ footer a {
   }
 
   h1 {
-    font-size: 1.5rem;
+    font-size: 1.45rem;
     text-align: center;
   }
 
   h2 {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  h3,
+  h4 {
+    font-size: 0.9rem;
     text-align: center;
   }
 }

@@ -127,12 +127,12 @@ const App = () => {
 
   return (
     <>
-      <div>
-        <header>
-          <br />
-          <h1>Welcome to Conways Game of Life, Begin!</h1>
-          <br />
-        </header>
+      <header>
+        <br />
+        <h1>Welcome to Conways Game of Life, Begin!</h1>
+        <br />
+      </header>
+      <div className="container">
         <div className="App">
           <section>
             <h2>
@@ -142,11 +142,18 @@ const App = () => {
             {/* <h4>Grid Count: {75}</h4> */}
             <div className="rules">
               <h4>
-                The Rules: For a space that is 'populated': Each cell with one
-                or no neighbors dies, as if by solitude. Each cell with four or
-                more neighbors dies, as if by overpopulation. Each cell with two
-                or three neighbors survives. For a space that is 'empty' or
-                'unpopulated' Each cell with three neighbors becomes populated.
+                The Rules:
+                <br />
+                For a space that is 'populated': Each cell with one or no
+                neighbors dies, solitude.
+                <br />
+                Each cell with four or more neighbors dies, as if by
+                overpopulation.
+                <br />
+                Each cell with two or three neighbors survives. For a space that
+                is 'empty.'
+                <br />
+                Each cell with three neighbors becomes populated.
               </h4>
             </div>
             <div>
@@ -155,11 +162,9 @@ const App = () => {
                 see the results:
               </h4>
               <img
-                // src="https://evolvingweb.ca/sites/default/files/inline-images/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f3456565a547654717a5252304255774e49482f67697068792e676966.gif"
-                //src="https://img.itch.zone/aW1nLzIxNTk1NTYucG5n/original/nS1Wxk.png"
                 src="https://ix.cs.uoregon.edu/~norris/cis330/projects/gameoflife.png"
                 alt=""
-                width="520px"
+                width="480px"
                 height="400px"
               />
               <br />
