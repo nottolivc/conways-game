@@ -1,7 +1,9 @@
 body {
   text-align: center;
   margin: 0 auto;
-  display: flex;
+  position: relative;
+  width: 100%;
+  /* display: flex; */
   justify-content: center;
   /* background: white; */
   /* background-image: url("https://www.vanseodesign.com/blog/wp-content/uploads/2011/10/background-3.jpg"); */
@@ -49,9 +51,13 @@ header {
   background: whitesmoke;
 }
 
-.grid {
-  margin: 0 auto;
-  /* width: 75%; */
+div.grid {
+  position: relative;
+  align-items: center;
+  width: 70%;
+  justify-content: center;
+  text-align: center;
+  padding: 15%;
   background-image: linear-gradient(
     to right,
     rgba(45, 0, 0, 0),
@@ -163,24 +169,24 @@ footer a {
   color: #444;
 }
 
-/* @media (max-width: 768px) {
+@media (max-width: 768px) {
   header {
     display: flex;
     flex-flow: column wrap;
   }
-  
+
   h1 {
-    font-size: 1.1rem;
+    font-size: 1.45rem;
     text-align: center;
   }
 
   h2 {
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     text-align: center;
   }
   h3,
   h4 {
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     text-align: center;
   }
-} */
+}
