@@ -55,6 +55,7 @@ const App = () => {
   // refer useref to whether running or not to toggle state
   const runningRef = useRef(running);
   runningRef.current = running;
+  const [generation, setGeneration] = useState(0);
   // set state logic to control range of speed input for timeout delay
   // let [range, setRange] = useState(75);
   // const handleChange = (event) => {
@@ -65,7 +66,6 @@ const App = () => {
     if (!runningRef.current) {
       return;
     }
-
     setGrid((currGrid) => {
       return produce(currGrid, (gridCopy) => {
         // create double for loop to check every value in the grid and update
@@ -90,7 +90,9 @@ const App = () => {
         }
       });
     });
-
+    if (setGrid) {
+      setGeneration((prevState) => (prevState += 1));
+    }
     setTimeout(runSimulation, 160);
   }, [traverseNeighbors]);
 
@@ -231,6 +233,7 @@ const App = () => {
           </div>
         </div>
         <footer>
+          <h4>Generation: {generation}</h4>
           <br />
           <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">
             Home
