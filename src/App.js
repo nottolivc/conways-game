@@ -23,7 +23,16 @@ const App = () => {
     [1, 0],
     [-1, 0],
   ];
+  // creating custom glide off function
+  // and storing 2d array for glider test later
   const glider = [[1, 0], [2, 1], [0, 2], [1, 2], [2, 2], [20], [50]];
+  // const gliderTest = [
+  //   [0, 0, 1, 0, 0],
+  //   [0, 1, 0, 1, 0],
+  //   [0, 1, 1, 1, 0],
+  //   [0, 0, 0, 1, 0],
+  //   [0, 1, 0, 0, 1],
+  // ];
   // creating a grid generator
   const createGrid = () => {
     const rows = [];
@@ -37,19 +46,7 @@ const App = () => {
   const [grid, setGrid] = useState(() => {
     return createGrid();
   });
-  //init color scheme
-  // function generateHslaColors(saturation, lightness, alpha, amount) {
-  //   let colors = [];
-  //   let huedelta = Math.trunc(360 / amount);
 
-  //   for (let i = 0; i < amount; i++) {
-  //     let hue = i * huedelta;
-  //     colors.push(`hsla(${hue},${saturation}%,${lightness}%,${alpha})`);
-  //   }
-
-  //   return colors;
-  // }
-  // let colore = generateHslaColors(50, 100, 1.0, 3);
   // init to not running hook
   const [running, setRunning] = useState(false);
 
@@ -58,10 +55,7 @@ const App = () => {
   runningRef.current = running;
   const [generation, setGeneration] = useState(0);
   // set state logic to control range of speed input for timeout delay
-  // let [range, setRange] = useState(75);
-  // const handleChange = (event) => {
-  //   setRange({ range: event.target.value });
-  // };
+
   // if not currently running, use callback to simulate update with setTimeout time value
   const runSimulation = useCallback(() => {
     if (!runningRef.current) {

@@ -50,7 +50,7 @@ for(let i = 0; i < rows; i++){
         });
         if (neighbors < 2 || neighbors > 3){
           temporaryGrid[i][j] =  0;
-        } else if (grid[i][j] === 0 && neighbours === 3) {
+        } else if (grid[i][j] === 0 && neighbors === 3) {
           temporaryGrid[i][j] = 1;
         }
       };
