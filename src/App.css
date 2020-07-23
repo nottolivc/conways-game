@@ -161,29 +161,16 @@ footer a {
   }
 
   h1 {
-    display: flex;
-    flex-flow: column wrap;
     font-size: 1.5rem;
     text-align: center;
   }
-  .App {
-    margin: 0 10px 0 10px;
-    text-align: center;
-    flex-flow: column wrap;
-    text-align: center;
-    justify-content: center;
-    width: 50%;
-  }
 
   h2 {
-    display: flex;
-    flex-flow: column wrap;
-    font-size: 0.9rem;
-    margin: 20px 20px 20xp 20px;
+    font-size: 0.8rem;
     text-align: center;
   }
 
-  h4 {
+  /* h4 {
     font-size: 0.75rem;
     text-align: center;
     margin: 0 10px;
@@ -199,5 +186,5 @@ footer a {
     justify-content: center;
     align-items: center;
     width: 70%;
-  }
+  } */
 }
