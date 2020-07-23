@@ -11,7 +11,7 @@ let numCols = 75;
 
 const App = () => {
   // setting counter logic
-  // let [count, setCount] = useState(75);
+
   // setting conways rules for possible values for traversal in 9x9 grid of cells
   const traverseNeighbors = [
     [0, 1],
@@ -23,6 +23,7 @@ const App = () => {
     [1, 0],
     [-1, 0],
   ];
+  const glider = [[1, 0], [2, 1], [0, 2], [1, 2], [2, 2], [20], [50]];
   // creating a grid generator
   const createGrid = () => {
     const rows = [];
@@ -95,6 +96,40 @@ const App = () => {
     }
     setTimeout(runSimulation, 160);
   }, [traverseNeighbors]);
+  // run glider simulation
+  const runGlider = useCallback(() => {
+    if (!runningRef.current) {
+      return;
+    }
+    setGrid((currGrid) => {
+      return produce(currGrid, (gridCopy) => {
+        // create double for loop to check every value in the grid and update
+        // produce sets immutable new grid
+        for (let i = 0; i < numRows; i++) {
+          for (let j = 0; j < numCols; j++) {
+            let neighbors = 0;
+            glider.forEach(([x, y]) => {
+              const newI = i + x;
+              const newJ = j + y;
+              if (newI >= 0 && newI < numRows && newJ >= 0 && newJ < numCols) {
+                neighbors += currGrid[newI][newJ];
+              }
+            });
+
+            if (neighbors < 2 || neighbors > 3) {
+              gridCopy[i][j] = 0;
+            } else if (currGrid[i][j] === 0 && neighbors === 3) {
+              gridCopy[i][j] = 1;
+            }
+          }
+        }
+      });
+    });
+    if (setGrid) {
+      setGeneration((prevState) => (prevState += 1));
+    }
+    setTimeout(runGlider, 160);
+  }, [glider]);
 
   return (
     <>
@@ -110,7 +145,7 @@ const App = () => {
               Press Random + Run to see Results, or select starting cell
               pattern:
             </h2>
-            <h4>Grid Count: {75}</h4>
+            {/* <h4>Grid Count: {75}</h4> */}
             <div className="rules">
               <h4>
                 The Rules: For a space that is 'populated': Each cell with one
@@ -166,6 +201,18 @@ const App = () => {
               }}
             >
               {running ? "stop" : "run"}
+            </button>
+            <button
+              className="run"
+              onClick={() => {
+                setRunning(!running);
+                if (!running) {
+                  runningRef.current = true;
+                  runGlider();
+                }
+              }}
+            >
+              {running ? "stop" : "glide off"}
             </button>
             <button
               className="pause"
@@ -235,9 +282,7 @@ const App = () => {
         <footer>
           <h4>Generation: {generation}</h4>
           <br />
-          <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">
-            Home
-          </a>
+          <a href="https://github.com/nottolivc/conways-game">Github</a>
           <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">
             About
           </a>
