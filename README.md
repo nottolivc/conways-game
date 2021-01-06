@@ -1,7 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 Current deployment on netlify: (https://zealous-murdock-8481c3.netlify.app/)
 
-## Cellular Automata and Conway's "Game of Life"
+## Cellular Automata and Conway's "Game of Life" version 1.0 (old school styling)
 
 Welcome to John Conway's "Game of Life"! This is a computer science classic from 1970, a program that simulates a cellular automaton (plural automata). It has connections to all kinds of different aspects of computer science and nature.
 
